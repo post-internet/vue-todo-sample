@@ -8,7 +8,7 @@ var app = new Vue({
       },
       {
         text: 'Todo Task 02',
-        isDone: false,
+        isDone: true,
       },
     ],
   },
