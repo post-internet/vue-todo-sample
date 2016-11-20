@@ -1,0 +1,96 @@
+html, body {
+  background: #FAFAFA;
+  color: #212121;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+#app {
+  max-width: 680px;
+  margin: auto;
+}
+
+#app h1 {
+  text-align: center;
+}
+
+#app .addtask {
+  height: 2.0em;
+  display: flex;
+}
+
+#app .addtask input {
+  font-family: inherit;
+  flex-grow: 1;
+  max-width: 100%;
+  border: #F0F0F0 1px solid;
+  border-radius: 3px 0 0 3px;
+  padding: 0 1.0em;
+}
+
+#app .addtask button {
+  font-family: inherit;
+  background: #388E3C;
+  color: #FAFAFA;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 0 3px 3px 0;
+}
+
+#app .tasklist {
+  list-style-type: none;
+  border: #F0F0F0 1px solid;
+  border-radius: 3px;
+  padding: 0;
+  margin: 0;
+}
+
+#app .task {
+  padding: 1.0em 3.0em;
+  line-height: 1.5em;
+}
+
+#app .task label {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+}
+
+#app .task label > input[type="checkbox"] {
+  display: none;
+}
+
+#app .task label:before {
+  content: "";
+  margin-bottom: -0.25em;
+  display: inline-block;
+  width: 1.0em;
+  height: 1.0em;
+  background: #FFF;
+  border: #757575 1px solid;
+  border-radius: 3px;
+}
+
+#app .task:nth-child(2n + 1) {
+  background: #F0F0F0;
+}
+
+#app .task:nth-child(2n) {
+  background: #FAFAFA;
+}
+
+#app .task.is-done {
+  opacity: 0.5;
+}
+
+#app .task.is-done label:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  display: inline-block;
+  width: 10px;
+	height: 5px;
+  border-left: 3px solid #1B5E20;
+	border-bottom: 2px solid #1B5E20;
+  transform: rotate(-45deg);
+}
