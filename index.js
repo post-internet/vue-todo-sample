@@ -1,16 +1,9 @@
+var APP_NAME = 'TodoApp';
+
 var app = new Vue({
   data: {
     title: 'Todo Title',
-    taskList: [
-      {
-        text: 'Todo Task 01',
-        isDone: false,
-      },
-      {
-        text: 'Todo Task 02',
-        isDone: true,
-      },
-    ],
+    taskList: JSON.parse(localStorage[APP_NAME] || '[]'),
     newTaskText: '',
   },
   computed: {
@@ -18,6 +11,14 @@ var app = new Vue({
       return this.taskList.some(function (task) {
         return task.isDone;
       });
+    },
+  },
+  watch: {
+    taskList: {
+      handler: function (taskList) {
+        localStorage[APP_NAME] = JSON.stringify(taskList);
+      },
+      deep: true,
     },
   },
   methods: {
