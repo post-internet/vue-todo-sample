@@ -24,7 +24,7 @@
           </li>
         </template>
       </ul>
-      <p>
+      <p v-if="hasDoneTask">
         <small v-on:click="clearDone()">Clear done</small>
       </p>
     </div>

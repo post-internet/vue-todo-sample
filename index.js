@@ -13,6 +13,13 @@ var app = new Vue({
     ],
     newTaskText: '',
   },
+  computed: {
+    hasDoneTask: function () {
+      return this.taskList.some(function (task) {
+        return task.isDone;
+      });
+    },
+  },
   methods: {
     addTask: function () {
       var newTask = {
