@@ -17,14 +17,16 @@
         <button>ADD</button>
       </p>
       <ul class="tasklist">
-        <li class="task">
+        <template v-for="task in taskList">
+          <li class="task">
+            <label><input type="checkbox" /></label>
+            <span>{{ task.text }}</span>
+          </li>
+        </template>
+        <!--<li class="task is-done">
           <label><input type="checkbox" /></label>
           <span>Todo</span>
-        </li>
-        <li class="task is-done">
-          <label><input type="checkbox" /></label>
-          <span>Todo</span>
-        </li>
+        </li>-->
       </ul>
     </div>
   </body>
