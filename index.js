@@ -22,6 +22,11 @@ var app = new Vue({
       this.taskList.push(newTask);
       this.newTaskText = '';
     },
+    clearDone: function () {
+      this.taskList = this.taskList.filter(function (task) {
+        return task.isDone !== true;
+      });
+    },
   },
 });
 
