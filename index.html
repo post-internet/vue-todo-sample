@@ -13,8 +13,8 @@
     <div id="app">
       <h1>{{ title }}</h1>
       <p class="addtask">
-        <input type="text" placeholder="Write your Todo" />
-        <button>ADD</button>
+        <input type="text" placeholder="Write your Todo" v-model="newTaskText" />
+        <button v-on:click="addTask()">ADD</button>
       </p>
       <ul class="tasklist">
         <template v-for="task in taskList">

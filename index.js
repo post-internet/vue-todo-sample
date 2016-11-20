@@ -11,6 +11,17 @@ var app = new Vue({
         isDone: true,
       },
     ],
+    newTaskText: '',
+  },
+  methods: {
+    addTask: function () {
+      var newTask = {
+        text: this.newTaskText,
+        isDone: false,
+      };
+      this.taskList.push(newTask);
+      this.newTaskText = '';
+    },
   },
 });
 
