@@ -2,7 +2,7 @@ var APP_NAME = 'TodoApp';
 
 var app = new Vue({
   data: {
-    title: 'Todo Title',
+    title: 'Todo App',
     taskList: JSON.parse(localStorage[APP_NAME] || '[]'),
     newTaskText: '',
   },
@@ -29,6 +29,9 @@ var app = new Vue({
       };
       this.taskList.push(newTask);
       this.newTaskText = '';
+    },
+    toggleDone: function (task) {
+      task.isDone = !task.isDone;
     },
     clearDone: function () {
       this.taskList = this.taskList.filter(function (task) {

@@ -18,7 +18,7 @@
       </p>
       <ul class="tasklist">
         <template v-for="task in taskList">
-          <li class="task" v-bind:class="{ 'is-done': task.isDone }">
+          <li class="task" v-bind:class="{ 'is-done': task.isDone }" v-on:click.prevent="toggleDone(task)">
             <label><input type="checkbox" v-model="task.isDone" /></label>
             <span>{{ task.text }}</span>
           </li>
