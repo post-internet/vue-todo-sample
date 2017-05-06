@@ -1,6 +1,45 @@
 # vue-todo-sample
+Please use this if you like!
 
-> A Vue.js project
+## Another way to make vue-todo-sample
+- [vue-cli](https://github.com/vuejs/vue-cli)
+- [webpack](https://webpack.js.org/)
+- [es2015](https://babeljs.io/learn-es2015/)
+- [eslint](http://eslint.org/)
+- [e2e test](http://nightwatchjs.org/)
+- [unit test](https://mochajs.org/)
+
+## Quick start
+```bash
+npm install
+npm run dev
+```
+
+## If you want to make this from the very beginning (mac)
+``` bash
+# install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install nodebrew
+brew install nodebrew
+nodebrew setup
+echo "export PATH=\$HOME/.nodebrew/current/bin:\$PATH" >> ~/.bash_profile
+source ~/.bash_profile
+
+# install nodejs
+nodebrew install-binary stable
+nodebrew use stable
+
+# install vue-cli
+npm install -g vue-cli
+
+# make vue project
+vue init webpack vue-todo-sample
+cd ./vue-todo-sample
+npm install
+npm run dev
+
+```
 
 ## Build Setup
 
