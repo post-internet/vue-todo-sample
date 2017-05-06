@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <h1>{{ title }}</h1>
+    <TaskList />
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import TaskList from './components/TaskList'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    TaskList
+  },
+  data () {
+    return {
+      title: 'Todo App'
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html, body {
+  background: #FAFAFA;
+  color: #212121;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", sans-serif;
 }
+
+#app {
+  max-width: 680px;
+  margin: auto;
+}
+
+#app h1 {
+  text-align: center;
+}
+
+
 </style>
