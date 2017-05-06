@@ -2,18 +2,18 @@
   <div>
     <p class="addtask">
       <input type="text" placeholder="Write your Todo" v-model="newTaskText" v-on:keydown.enter="addTask()" />
-      <button v-on:click="addTask()">ADD</button>
+      <button class="pointer" v-on:click="addTask()">ADD</button>
     </p>
     <ul class="tasklist">
       <template v-for="task in taskList">
         <li class="task" v-bind:class="{ 'is-done': task.isDone }" v-on:click.prevent="toggleDone(task)">
-          <label><input type="checkbox" v-model="task.isDone" /></label>
+          <label class="pointer"><input type="checkbox" v-model="task.isDone" /></label>
           <span>{{ task.text }}</span>
         </li>
       </template>
     </ul>
     <p v-if="hasDoneTask" id="clear-done">
-      <small v-on:click="clearDone()">Clear done</small>
+      <small class="pointer" v-on:click="clearDone()">Clear done</small>
     </p>
   </div>
 </template>
@@ -146,5 +146,18 @@ export default {
   border-left: 3px solid #1B5E20;
 	border-bottom: 2px solid #1B5E20;
   transform: rotate(-45deg);
+}
+
+#clear-done small {
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  color: #ffffff;
+  background: #3498db;
+  padding:  3px 6px 3px 6px;;
+}
+
+.pointer {
+  cursor: pointer;
 }
 </style>
