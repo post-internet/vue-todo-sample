@@ -2,7 +2,7 @@
 // http://nightwatchjs.org/guide#usage
 
 module.exports = {
-  'default e2e tests': function (browser) {
+  'e2e task list test': function (browser) {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
     // see nightwatch.conf.js
@@ -10,10 +10,26 @@ module.exports = {
 
     browser
       .url(devServer)
-      .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js App')
-      .assert.elementCount('img', 1)
+      .waitForElementVisible('#app', 1000)
+
+    // check add task
+    browser
+      .setValue('#app .addtask input[type=text]', 'test')
+      .click('#app .addtask button')
+      .waitForElementVisible('#app .tasklist .task', 1000)
+      .assert.containsText('#app .tasklist .task span', 'test')
+
+    // check toggle task
+    browser
+      .click('#app .tasklist .task')
+      .assert.attributeEquals('#app .tasklist .task input[type=checkbox]', 'checked', 'true')
+
+    // check clear done
+    browser
+      .click('#app #clear-done small')
+      .expect.element('#app .tasklist .task').to.not.be.present
+
+    browser
       .end()
   }
 }

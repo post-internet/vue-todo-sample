@@ -12,7 +12,7 @@
         </li>
       </template>
     </ul>
-    <p v-if="hasDoneTask">
+    <p v-if="hasDoneTask" id="clear-done">
       <small v-on:click="clearDone()">Clear done</small>
     </p>
   </div>
