@@ -46,6 +46,7 @@ export default {
   },
   methods: {
     addTask () {
+      if (this.newTaskText.length === 0) return
       const newTask = {
         text: this.newTaskText,
         isDone: false
